@@ -1,6 +1,6 @@
 [project]
 name = "jya"
-description = "Add your description here"
+description = "Generates self-emission images of plasmas with differentiable programming"
 readme = "README.md"
 requires-python = ">=3.12"
 dynamic = ["version"]
@@ -11,10 +11,8 @@ classifiers = [
 dependencies = [
     "jax >= 0.4.24",
     "jaxlib >= 0.4.24",
-    "loguru >= 0.6.0",
     "numpy >= 1.26.4",  
     "jaxtyping >= 0.2.36",
-    "interpax",
     "scipy",
 ]
 
