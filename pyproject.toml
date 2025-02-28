@@ -1,0 +1,51 @@
+[project]
+name = "jya"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dynamic = ["version"]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "jax >= 0.4.24",
+    "jaxlib >= 0.4.24",
+    "loguru >= 0.6.0",
+    "numpy >= 1.26.4",  
+    "jaxtyping >= 0.2.36",
+    "interpax",
+    "scipy",
+]
+
+[build-system]
+requires = ["setuptools >= 67.0.0", "setuptools_scm>=8", "numpy >= 1.23"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_file = "jya/_version.py"
+parentdir_prefix_version = "jya-"
+fallback_version = "0.0.0"
+version_scheme = "no-guess-dev"
+
+[tool.setuptools.packages.find]
+exclude = ["install*", "public*"]
+
+[tool.pyright]
+pythonVersion = "3.12"
+pythonPlatform = "Linux"
+stubPath = "typings"
+typeCheckingMode = "basic"
+reportInvalidStringEscapeSequence = "error"
+reportUnusedImport = "none"
+reportMissingImports = "none"
+reportPrivateImportUsage = "none"
+reportInvalidTypeVarUse = "none"
+reportUnsupportedDunderAll = "none"
+reportShadowedImports = "none"
+reportArgumentType = "none"
+exclude = ["install*", "public*", "**/tests/**"]
+
+[tool.uv.pip]
+compile-bytecode = true
+config-settings.editable_mode="compat"

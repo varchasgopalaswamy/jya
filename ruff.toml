@@ -1,0 +1,65 @@
+target-version = "py312"
+
+[lint]
+select = [
+    "I",
+    "W",
+    "T100", 
+    "YTT",
+    "UP009", 
+    "UP006",
+    "F",
+    "E",
+    "A",
+    "COM",
+    "EXE",
+    "FA",
+    "ISC",
+    "ICN",
+    "LOG",
+    "G",
+    "INP",
+    "PIE",
+    "PT",
+    "Q",
+    "RSE",
+    "TID",
+    "FLY",
+    "INT",
+    "FA",
+    "FURB",
+    "EM",
+    "RET",
+    "UP",
+    "DTZ",
+    "C4",
+    "TRY",
+    "SIM",
+    "PERF",
+    "RUF",
+    "SLF",
+    "FBT",
+    "B",
+    "T20",
+    "PTH",  
+    "PD",
+]
+allowed-confusables = ["ρ"]
+extend-safe-fixes = ["EM102", "EM101", "SIM108", "RET504"]
+ignore = ["E501", "COM812", "F722", "UP037", "F821", "F811"]
+
+exclude = ["*.pyi", "*.ipynb", "tests/*", "doc/*", "hooks/*"]
+
+[lint.per-file-ignores]
+"__init__.py" = ["F401", "E402", "I001", "I002"]
+"__init__.pyi" = ["F401", "E402", "I001", "I002"]
+"doc/source/conf.py" = ["INP001"]
+
+[format]
+docstring-code-format = true
+line-ending = "lf"
+
+[lint.isort]
+from-first = false
+force-sort-within-sections = true
+required-imports = ["from __future__ import annotations"]
